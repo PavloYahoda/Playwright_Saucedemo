@@ -3,16 +3,23 @@ import { Locator, Page } from "@playwright/test";
 export class HomePage {
 
     readonly page: Page;
-    readonly btnSignUp: Locator;
+    readonly fieldUserName: Locator;
+    readonly fieldPassword: Locator;
+    readonly btnLogin: Locator;
 
 
 
     constructor(page: Page) {
         this.page = page;
-        this.btnSignUp = page.getByText('Sign up');
+        this.fieldUserName = page.locator('//*[@data-test="username"]');
+        this.fieldPassword = page.locator('//*[@data-test="password"]');
+        this.btnLogin = page.locator('//*[@data-test="login-button"]');
     }
-
-    async openRegisterForm() {
-        await this.btnSignUp.click();
+   
+    async loginWithCreds(userName: string, password: string) {
+        
+        await this.fieldUserName.fill(userName);
+        await this.fieldPassword.fill(password);
+        await this.btnLogin.click();
     }
 }

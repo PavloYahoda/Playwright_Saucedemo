@@ -28,11 +28,10 @@ export default defineConfig({
     ['list'],
     //['json', { outputFile: 'playwright-report.json' }],
     ['./custom-json-reporter.ts'],
-    // JSON репорт
-],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://www.saucedemo.com/',
+    baseURL: 'https://www.saucedemo.com',
     viewport: { width: 1920, height: 1080 }, // або інші розміри для фул-скрін
     deviceScaleFactor: 1,
     trace: 'on-first-retry',
@@ -40,10 +39,10 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
     // {
     //   name: 'firefox',
@@ -68,7 +67,7 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge']/*, channel: 'msedge' */},
+      use: { ...devices['Desktop Edge']/*, channel: 'msedge' */ },
     },
     // {
     //   name: 'Google Chrome',
