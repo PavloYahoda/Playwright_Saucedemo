@@ -1,0 +1,269 @@
+{
+  "totalTests": 37,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "overallStatus": "passed",
+  "startTime": "2025-01-05T09:44:09.501Z",
+  "endTime": "2025-01-05T09:45:34.784Z",
+  "tests": [
+    {
+      "description": "Success scenario",
+      "testName": "User registration with valid data",
+      "startTime": "2025-01-05T09:44:10.807Z",
+      "endTime": "2025-01-05T09:44:14.188Z",
+      "status": "passed"
+    },
+    {
+      "description": "Fail scenarios",
+      "testName": "User already exists",
+      "startTime": "2025-01-05T09:44:14.371Z",
+      "endTime": "2025-01-05T09:44:16.649Z",
+      "status": "passed"
+    },
+    {
+      "description": "Name field validations",
+      "testName": "Empty field: Name is required",
+      "startTime": "2025-01-05T09:44:16.660Z",
+      "endTime": "2025-01-05T09:44:18.869Z",
+      "status": "passed"
+    },
+    {
+      "description": "Name field validations",
+      "testName": "Wrong data: Name is invalid",
+      "startTime": "2025-01-05T09:44:18.879Z",
+      "endTime": "2025-01-05T09:44:21.067Z",
+      "status": "passed"
+    },
+    {
+      "description": "Name field validations",
+      "testName": "Wrong lenght (1 character) of Name",
+      "startTime": "2025-01-05T09:44:21.076Z",
+      "endTime": "2025-01-05T09:44:23.385Z",
+      "status": "passed"
+    },
+    {
+      "description": "Name field validations",
+      "testName": "Wrong lenght (21 characters) of Name",
+      "startTime": "2025-01-05T09:44:23.394Z",
+      "endTime": "2025-01-05T09:44:25.682Z",
+      "status": "passed"
+    },
+    {
+      "description": "Last Name field validations",
+      "testName": "Empty field: Last Name is required",
+      "startTime": "2025-01-05T09:44:25.692Z",
+      "endTime": "2025-01-05T09:44:27.907Z",
+      "status": "passed"
+    },
+    {
+      "description": "Last Name field validations",
+      "testName": "Wrong data: Last Name is invalid",
+      "startTime": "2025-01-05T09:44:27.917Z",
+      "endTime": "2025-01-05T09:44:30.176Z",
+      "status": "passed"
+    },
+    {
+      "description": "Last Name field validations",
+      "testName": "Wrong lenght (1 character) of Last Name",
+      "startTime": "2025-01-05T09:44:30.191Z",
+      "endTime": "2025-01-05T09:44:32.395Z",
+      "status": "passed"
+    },
+    {
+      "description": "Last Name field validations",
+      "testName": "Wrong lenght (21 characters) of Last Name",
+      "startTime": "2025-01-05T09:44:32.405Z",
+      "endTime": "2025-01-05T09:44:34.683Z",
+      "status": "passed"
+    },
+    {
+      "description": "Email field validation",
+      "testName": "Empty field: Email is required",
+      "startTime": "2025-01-05T09:44:34.693Z",
+      "endTime": "2025-01-05T09:44:36.948Z",
+      "status": "passed"
+    },
+    {
+      "description": "Email field validation",
+      "testName": "Wrong data (no @)",
+      "startTime": "2025-01-05T09:44:36.958Z",
+      "endTime": "2025-01-05T09:44:39.284Z",
+      "status": "passed"
+    },
+    {
+      "description": "Email field validation",
+      "testName": "Wrong data (two @)",
+      "startTime": "2025-01-05T09:44:39.293Z",
+      "endTime": "2025-01-05T09:44:41.482Z",
+      "status": "passed"
+    },
+    {
+      "description": "Email field validation",
+      "testName": "Wrong data (no dot after @)",
+      "startTime": "2025-01-05T09:44:41.489Z",
+      "endTime": "2025-01-05T09:44:43.841Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Empty field: Password is required",
+      "startTime": "2025-01-05T09:44:43.853Z",
+      "endTime": "2025-01-05T09:44:46.058Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Wrong lenght of password (7 characters)",
+      "startTime": "2025-01-05T09:44:46.070Z",
+      "endTime": "2025-01-05T09:44:48.248Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Wrong lenght of password (16 characters)",
+      "startTime": "2025-01-05T09:44:48.257Z",
+      "endTime": "2025-01-05T09:44:50.615Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Wrong data (no capital letter)",
+      "startTime": "2025-01-05T09:44:50.623Z",
+      "endTime": "2025-01-05T09:44:52.796Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Wrong data (no small letter)",
+      "startTime": "2025-01-05T09:44:52.804Z",
+      "endTime": "2025-01-05T09:44:55.129Z",
+      "status": "passed"
+    },
+    {
+      "description": "Password field validation",
+      "testName": "Wrong data (no integer)",
+      "startTime": "2025-01-05T09:44:55.137Z",
+      "endTime": "2025-01-05T09:44:57.297Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Empty field: Re-Enter Password is required",
+      "startTime": "2025-01-05T09:44:57.306Z",
+      "endTime": "2025-01-05T09:44:59.522Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Wrong lenght of Re-Enter Password (7 characters)",
+      "startTime": "2025-01-05T09:44:59.530Z",
+      "endTime": "2025-01-05T09:45:01.697Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Wrong lenght of Re-Enter Password (16 characters)",
+      "startTime": "2025-01-05T09:45:01.707Z",
+      "endTime": "2025-01-05T09:45:03.965Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Wrong data of Re-Enter Password (no capital letter)",
+      "startTime": "2025-01-05T09:45:03.973Z",
+      "endTime": "2025-01-05T09:45:06.115Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Wrong data of Re-Enter Password(no small letter)",
+      "startTime": "2025-01-05T09:45:06.124Z",
+      "endTime": "2025-01-05T09:45:08.365Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Wrong data of Re-Enter Password(no integer)",
+      "startTime": "2025-01-05T09:45:08.377Z",
+      "endTime": "2025-01-05T09:45:10.659Z",
+      "status": "passed"
+    },
+    {
+      "description": "Re-Enter Password field validation",
+      "testName": "Match: Password and Re-Enter password are not the same",
+      "startTime": "2025-01-05T09:45:10.672Z",
+      "endTime": "2025-01-05T09:45:12.896Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is empty",
+      "testName": "Empty Name, other are correct",
+      "startTime": "2025-01-05T09:45:12.904Z",
+      "endTime": "2025-01-05T09:45:15.188Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is empty",
+      "testName": "Empty Last Name, other are correct",
+      "startTime": "2025-01-05T09:45:15.196Z",
+      "endTime": "2025-01-05T09:45:17.415Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is empty",
+      "testName": "Empty Email, other are correct",
+      "startTime": "2025-01-05T09:45:17.423Z",
+      "endTime": "2025-01-05T09:45:19.465Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is empty",
+      "testName": "Empty Password, other are correct",
+      "startTime": "2025-01-05T09:45:19.474Z",
+      "endTime": "2025-01-05T09:45:21.534Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is empty",
+      "testName": "Empty Re-Enter Password, other are correct",
+      "startTime": "2025-01-05T09:45:21.543Z",
+      "endTime": "2025-01-05T09:45:23.754Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is incorrect",
+      "testName": "Name is incorrect, other are correct",
+      "startTime": "2025-01-05T09:45:23.762Z",
+      "endTime": "2025-01-05T09:45:25.917Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is incorrect",
+      "testName": "Last Name is incorrect, other are correct",
+      "startTime": "2025-01-05T09:45:25.926Z",
+      "endTime": "2025-01-05T09:45:28.040Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is incorrect",
+      "testName": "Email is incorrect, other are correct",
+      "startTime": "2025-01-05T09:45:28.048Z",
+      "endTime": "2025-01-05T09:45:30.220Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is incorrect",
+      "testName": "Password is incorrect, other are correct",
+      "startTime": "2025-01-05T09:45:30.229Z",
+      "endTime": "2025-01-05T09:45:32.505Z",
+      "status": "passed"
+    },
+    {
+      "description": "Register button validations: some field is incorrect",
+      "testName": "Re-Enter Password is incorrect, other are correct",
+      "startTime": "2025-01-05T09:45:32.514Z",
+      "endTime": "2025-01-05T09:45:34.599Z",
+      "status": "passed"
+    }
+  ]
+}
