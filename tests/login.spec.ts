@@ -9,7 +9,8 @@ test.describe('Login: all type of users', () => {
     let homePage: HomePage;
     let inventoryPage: InventoryPage;
 
-    test.beforeEach(async ({ page }) => {
+    test.beforeEach(async ({ page }, testInfo) => {
+        testInfo.annotations.push({ type: 'projectName', description: testInfo.project.name });
         await page.goto('/');
         homePage = new HomePage(page);
         inventoryPage = new InventoryPage(page);
