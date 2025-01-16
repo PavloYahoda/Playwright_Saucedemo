@@ -1,11 +1,11 @@
 import { Locator, Page } from "@playwright/test";
 
-export class HomePage {
+export class DetailsPage {
 
     readonly page: Page;
     readonly fieldUserName: Locator;
     readonly fieldPassword: Locator;
-    readonly btnLogin: Locator;
+    readonly btnBackToProducts: Locator;
 
 
 
@@ -13,12 +13,8 @@ export class HomePage {
         this.page = page;
         this.fieldUserName = page.locator('//*[@data-test="username"]');
         this.fieldPassword = page.locator('//*[@data-test="password"]');
-        this.btnLogin = page.locator('//*[@data-test="login-button"]');
+        this.btnBackToProducts = page.locator('//*[@data-test="back-to-products"]');
     }
    
-    async loginWithCreds(userName: string, password: string) {       
-        await this.fieldUserName.fill(userName);
-        await this.fieldPassword.fill(password);
-        await this.btnLogin.click();
-    }
+
 }
