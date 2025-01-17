@@ -29,34 +29,9 @@ test.describe('Details page testing with standard user', () => {
     });
     test.describe('Cart page testing', () => {
         test('Check controls on the page', async ({ page }) => {
-            await inventoryPage.addToCart('backpack');
-            await inventoryPage.addToCart('bike light');
-            await inventoryPage.openCart();
-            await cartPage.verifyControlsOnCartPage();
-            await expect(cartPage.iconCartCounter).toHaveText('2');
-        });
-        test('Remove good from the Cart', async ({ page }) => {
-            await inventoryPage.addToCart('backpack');
-            await inventoryPage.addToCart('bike light');
-            await inventoryPage.openCart();
-            await expect(cartPage.iconCartCounter).toHaveText('2');
-            const goodsCountBefore = await cartPage.getAllGoodsOnPage();
-            expect(goodsCountBefore).toBe(2);
-
-            await cartPage.removeFromCart('backpack');
-            await expect(cartPage.iconCartCounter).toHaveText('1');
-            const goodsCountAfter = await cartPage.getAllGoodsOnPage();
-            expect(goodsCountAfter).toBe(1);
-        });
-        test('Check "Go to shopping"', async ({ page }) => {
-            await inventoryPage.openCart();
-            await cartPage.goToShopping();
-            await expect(inventoryPage.title).toHaveText('Products');
-        });
-        test('Check "Chechout"', async ({ page }) => {
             await inventoryPage.openCart();
             await cartPage.goToCheckout();
-            await expect(checkoutPage.title).toHaveText('Checkout: Your Information');
+            await checkoutPage.verifyControlsOnCheckoutPage();
         });
     });
 });
