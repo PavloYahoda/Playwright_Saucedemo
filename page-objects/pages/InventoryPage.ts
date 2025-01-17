@@ -8,6 +8,7 @@ export class InventoryPage {
     readonly btnAddToCartBikeLight: Locator;
     readonly btnRemoveBackpack: Locator;
     readonly btnRemoveBikeLight: Locator;
+    readonly linkToCart: Locator;
     readonly iconCartCounter: Locator;
     readonly imageBackpack: Locator;
     readonly linkBackpack: Locator;
@@ -20,14 +21,13 @@ export class InventoryPage {
         this.btnAddToCartBikeLight = page.locator('//*[@data-test="add-to-cart-sauce-labs-bike-light"]');
         this.btnRemoveBackpack = page.locator('//*[@data-test="remove-sauce-labs-backpack"]');
         this.btnRemoveBikeLight = page.locator('//*[@data-test="remove-sauce-labs-remove-sauce-labs-bike-light"]');
+        this.linkToCart = page.locator('//*[@data-test="shopping-cart-link"]');
         this.iconCartCounter = page.locator('//*[@data-test="shopping-cart-badge"]');
         this.imageBackpack = page.locator('//*[@data-test="inventory-item-sauce-labs-backpack-img"]');
         this.linkBackpack = page.locator('//*[@data-test="item-4-title-link"]');
     }
 
-    async verifyLoginIsSuccess(userName: string) {
-        await (userName === 'locked_out_user' ? expect(this.title).not.toBeVisible() : expect(this.title).toBeVisible());
-    }
+
     async getAllGoodsOnPage(): Promise<number> {
         return await this.page.locator('//*[@data-test = "inventory-item"]').count();
     }
@@ -59,6 +59,9 @@ export class InventoryPage {
     async openDetailsByLink() {
         await this.linkBackpack.click();
     }
+    async openCart() {
+        await this.linkToCart.click();
+    }
     /**
  * 
  * @param good - should be one of this: backpack, bike light
@@ -89,7 +92,7 @@ export class InventoryPage {
             console.log(`${goodIsCheck} - checked`);
         }
     }
-
-
-
+    async verifyLoginIsSuccess(userName: string) {
+        await (userName === 'locked_out_user' ? expect(this.title).not.toBeVisible() : expect(this.title).toBeVisible());
+    }
 }
