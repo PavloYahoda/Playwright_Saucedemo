@@ -7,6 +7,7 @@ import { CheckoutPage } from '../page-objects/pages/CheckoutPage';
 import { OverviewPage } from '../page-objects/pages/OverviewPage';
 import { CompletePage } from '../page-objects/pages/CompletePage';
 import { TEST_USER } from '../testData/UserData';
+import dotenv from 'dotenv';
 
 
 
@@ -20,6 +21,8 @@ test.describe('E2E test with standard user', () => {
     let overviewPage: OverviewPage;
     let completePage: CompletePage;
 
+    dotenv.config();
+
     test.beforeEach(async ({ page }, testInfo) => {
         testInfo.annotations.push({ type: 'projectName', description: testInfo.project.name });
         await page.goto('/');
@@ -31,7 +34,7 @@ test.describe('E2E test with standard user', () => {
         overviewPage = new OverviewPage(page);
         completePage = new CompletePage(page);
 
-        await homePage.loginWithCreds(TEST_USER.username, TEST_USER.password);
+        await homePage.loginWithCreds(process.env.USER_NAME!, process.env.PASSWORD!);
     });
 
     test('E2E test', async ({ page }) => {
