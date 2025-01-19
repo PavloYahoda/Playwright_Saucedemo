@@ -5,7 +5,7 @@
 node_modules/
 /test-results/
 /playwright-report/
-/playwright-html-report/
+playwright-html-report/
 /blob-report/
 /playwright/.cache/
 .env
