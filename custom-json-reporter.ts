@@ -1,4 +1,4 @@
-import { Reporter, TestCase, TestResult, Suite } from '@playwright/test/reporter';
+import { Reporter, TestCase, TestResult, Suite, TestStep } from '@playwright/test/reporter';
 import * as fs from 'fs';
 import * as path from 'path';
 import { DateTime } from 'luxon';
@@ -41,13 +41,17 @@ class CustomJsonReporter implements Reporter {
             this.projectResults[projectName] = [];
         }
 
+        // Збираємо інформацію про кроки верхнього рівня
+        const steps = this.collectTopLevelSteps(result.steps);
+
         this.projectResults[projectName].push({
             description: test.parent?.title || 'No description',
             testName: test.title,
             startTime: this.formatTime(testStartTime),
             endTime: this.formatTime(testEndTime),
             status: status,
-            project: projectName, // Назва проекту
+            project: projectName,
+            steps: steps, // Додаємо тільки кроки верхнього рівня
         });
     }
 
@@ -85,8 +89,23 @@ class CustomJsonReporter implements Reporter {
     // Форматуємо час у Київському часовому поясі
     private formatTime(date: Date): string {
         return DateTime.fromJSDate(date)
-            .setZone(this.timeZone)  // Встановлюємо часовий пояс Київ
-            .toFormat('dd/MM/yyyy HH:mm:ss');  // Форматуємо у потрібний формат
+            .setZone(this.timeZone) // Встановлюємо часовий пояс Київ
+            .toFormat('dd/MM/yyyy HH:mm:ss'); // Форматуємо у потрібний формат
+    }
+
+    // Метод для збору тільки кроків верхнього рівня
+    private collectTopLevelSteps(steps: TestStep[]): { [key: string]: string } {
+        const stepDetails: { [key: string]: string } = {};
+
+        for (const step of steps) {
+            if (step.category === 'test.step') { // Перевіряємо, чи це крок, створений через test.step
+                const stepName = step.title;
+                const stepStatus = step.error ? 'failed' : 'passed'; // Визначаємо статус кроку
+                stepDetails[stepName] = stepStatus;
+            }
+        }
+
+        return stepDetails;
     }
 }
 

@@ -34,7 +34,7 @@ test.describe('E2E test with standard user', () => {
         await homePage.loginWithCreds(TEST_USER.username, TEST_USER.password);
     });
 
-    test('E2E test with standard user', async ({ page }) => {
+    test('E2E test', async ({ page }) => {
         
         await test.step('Add goods to cart and verify counter', async () => {
             await inventoryPage.addToCart('backpack');
