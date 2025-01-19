@@ -4,33 +4,34 @@ export class CheckoutPage {
 
     readonly page: Page;
     readonly title: Locator;
-    readonly fieldName: Locator;
-    readonly fieldDescription: Locator;
-    readonly fieldPrice: Locator;
-
+    readonly fieldFirstName: Locator;
+    readonly fieldLastName: Locator;
+    readonly fieldZipCode: Locator;
+    readonly btnContinue: Locator;
+    readonly btnCancel: Locator;
+    readonly errorMessage: Locator;
 
 
     constructor(page: Page) {
         this.page = page;
         this.title = page.locator('[data-test="title"]');
-        this.fieldName = page.locator('//*[@data-test="inventory-item-name"]');
-        this.fieldDescription = page.locator('//*[@data-test="inventory-item-desc"]');
-        this.fieldPrice = page.locator('//*[@data-test="inventory-item-price"]');
-
+        this.fieldFirstName = page.locator('//*[@data-test="firstName"]');
+        this.fieldLastName = page.locator('//*[@data-test="lastName"]');
+        this.fieldZipCode = page.locator('//*[@data-test="postalCode"]');
+        this.btnContinue = page.locator('//*[@data-test="continue"]');
+        this.btnCancel = page.locator('//*[@data-test="cancel"]');
+        this.errorMessage = page.locator('//*[@data-test="error"]');
     }
 
-
-
-    async goToShopping() {
-        
+    async fillAllFields(firstName: string, lastName: string, zipCode: string) {
+        await this.fieldFirstName.fill(firstName);
+        await this.fieldLastName.fill(lastName);
+        await this.fieldZipCode.fill(zipCode);
     }
-    async goToCheckout() {
-        
+    async submitForm() {
+        await this.btnContinue.click();
     }
-
-
-    async verifyControlsOnCheckoutPage(): Promise<void> {
-
-
+    async rejectForm(){
+        await this.btnCancel.click();
     }
 }
