@@ -1,8 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { HomePage } from '../../page-objects/pages/HomePage';
 import { InventoryPage } from '../../page-objects/pages/InventoryPage';
 import { TEST_USER } from '../../testData/UserData';
-import path from 'path';
 
 
 test.describe('Login and save state', () => {
