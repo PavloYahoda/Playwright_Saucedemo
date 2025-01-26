@@ -36,24 +36,43 @@ export default defineConfig({
     viewport: { width: 1920, height: 1080 }, // або інші розміри для фул-скрін
     deviceScaleFactor: 1,
     trace: 'on-first-retry',
+    screenshot: 'on',
+    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'setup',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: '*setup/*.ts'
     },
 
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'e2e',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup']
     },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'], deviceScaleFactor: 1 },
-    },
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'], deviceScaleFactor: 1 },
+    // },
+
+    // {
+    //   name: 'Microsoft Edge',
+    //   use: { ...devices['Desktop Edge']/*, channel: 'msedge' */ },
+    // },
 
     /* Test against mobile viewports. */
     // {
@@ -66,10 +85,7 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge']/*, channel: 'msedge' */ },
-    },
+
     // {
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },

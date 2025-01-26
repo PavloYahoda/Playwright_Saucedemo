@@ -27,7 +27,9 @@ export class InventoryPage {
         this.linkBackpack = page.locator('//*[@data-test="item-4-title-link"]');
     }
 
-
+    async open(){
+        this.page.goto('https://www.saucedemo.com/inventory.html');
+    }
     async getAllGoodsOnPage(): Promise<number> {
         return await this.page.locator('//*[@data-test = "inventory-item"]').count();
     }

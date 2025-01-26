@@ -13,6 +13,8 @@ import dotenv from 'dotenv';
 
 test.describe('E2E test with standard user', () => {
 
+    test.use({storageState: './testData/states/standard_user.json'});
+
     let homePage: HomePage;
     let inventoryPage: InventoryPage;
     let detailsPage: DetailsPage;
@@ -25,7 +27,7 @@ test.describe('E2E test with standard user', () => {
 
     test.beforeEach(async ({ page }, testInfo) => {
         testInfo.annotations.push({ type: 'projectName', description: testInfo.project.name });
-        await page.goto('/');
+        //await page.goto('/');
         homePage = new HomePage(page);
         inventoryPage = new InventoryPage(page);
         detailsPage = new DetailsPage(page);
@@ -34,12 +36,14 @@ test.describe('E2E test with standard user', () => {
         overviewPage = new OverviewPage(page);
         completePage = new CompletePage(page);
 
-        await homePage.loginWithCreds(process.env.USER_NAME!, process.env.PASSWORD!);
+        //await homePage.loginWithCreds(process.env.USER_NAME!, process.env.PASSWORD!);
     });
 
     test('E2E test', async ({ page }) => {
         
         await test.step('Add goods to cart and verify counter', async () => {
+            await inventoryPage.open();
+            await page.waitForLoadState('domcontentloaded');
             await inventoryPage.addToCart('backpack');
             await inventoryPage.addToCart('bike light');
             await expect(inventoryPage.iconCartCounter).toHaveText('2');
