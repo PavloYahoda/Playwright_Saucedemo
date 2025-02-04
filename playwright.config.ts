@@ -33,7 +33,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: process.env.BASE_URL,
-    viewport: { width: 1920, height: 1080 }, // або інші розміри для фул-скрін
+    viewport: { width: 1920, height: 1080 },
     deviceScaleFactor: 1,
     trace: 'on-first-retry',
   },
