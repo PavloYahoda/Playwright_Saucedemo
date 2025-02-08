@@ -11,7 +11,7 @@ test.describe('Login: all type of users', () => {
 
     test.beforeEach(async ({ page }, testInfo) => {
         testInfo.annotations.push({ type: 'projectName', description: testInfo.project.name });
-        await page.goto('/');
+        await page.goto('https://www.saucedemo.com/');
         homePage = new HomePage(page);
         inventoryPage = new InventoryPage(page);
     });
